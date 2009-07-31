@@ -1,3 +1,7 @@
+/*
+   HydraFramework - Copyright (c) 2009 andCulture, Inc. Some rights reserved.
+   Your reuse is governed by the Creative Commons Attribution 3.0 United States License
+ */
 package view.components.fruit.data.delegates {
 	import view.components.fruit.data.descriptors.FruitDescriptor;
 	import view.components.fruit.data.interfaces.IFruit;
@@ -15,6 +19,12 @@ package view.components.fruit.data.delegates {
 		public function FruitDelegate() {
 			super();
 		}
+
+		/*
+		   -----------------------------------------------------------------------
+		   Public API
+		   -----------------------------------------------------------------------
+		 */
 
 		override public function get keyField():String {
 			return "id";
@@ -64,6 +74,13 @@ package view.components.fruit.data.delegates {
 			super.updateObject(object);
 		}
 		
+		
+		/*
+		   -----------------------------------------------------------------------
+		   Private Methods
+		   -----------------------------------------------------------------------
+		 */
+		 
 		private function newFruit():IFruit {
 			var fruit:IFruit = new FruitDescriptor();
 			return fruit;

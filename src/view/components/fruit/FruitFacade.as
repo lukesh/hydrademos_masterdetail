@@ -1,3 +1,7 @@
+/*
+   HydraFramework - Copyright (c) 2009 andCulture, Inc. Some rights reserved.
+   Your reuse is governed by the Creative Commons Attribution 3.0 United States License
+ */
 package view.components.fruit
 {
 	import com.hydraframework.core.mvc.patterns.facade.Facade;
@@ -32,9 +36,21 @@ package view.components.fruit
 			/*
 			   Delegates
 			*/
+			
+			// No additional delegates need to be registered. When you 
+			// initialize the MasterDetail plugin, it registers that delegate
+			// for you. You can of course override it here or in implementation
+			// if you choose. 
+			
 			/*
 			   Proxies
 			*/
+			
+			// No additional proxies are needed. The MasterDetail plugin mixes
+			// in a proxy that handles the collection of objects and the
+			// selected object, as well as the dispatching of MasterDetail
+			// notifications.
+			
 			/*
 			   Mediators
 			*/
