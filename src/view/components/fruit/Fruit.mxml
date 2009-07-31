@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HDividedBox xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" xmlns:fruitMasterList="com.adeptiv.learning.fruit.view.components.fruitMasterList.*"
+	xmlns:fruitDetail="com.adeptiv.learning.fruit.view.components.fruitDetail.*" preinitialize="HydraFramework.initialize(this, FruitFacade)"
+	>
+	<mx:Script>
+		<![CDATA[
+			import mx.events.ListEvent;
+			import view.components.fruit.data.interfaces.IFruit;
+			import com.hydraframework.core.HydraFramework;
+			import mx.collections.ArrayCollection;
+
+			[Bindable]
+			public var waiting:Boolean;
+
+			private var _collection:ArrayCollection;
+
+			[Bindable(event="collectionChange")]
+			public function set collection(value:ArrayCollection):void {
+				if (value != _collection) {
+					var i:int = wGrid.selectedIndex;
+					_collection = value;
+					wGrid.dataProvider = _collection;
+					wGrid.selectedIndex = i;
+					dispatchEvent(new Event("collectionChange"));
+				}
+			}
+
+			public function get collection():ArrayCollection {
+				return _collection;
+			}
+
+			private var _selectedItem:IFruit;
+
+			[Bindable(event="selectedItemChange")]
+			public function set selectedItem(value:IFruit):void {
+				if (value != _selectedItem) {
+					_selectedItem = value;
+					dispatchEvent(new Event("selectedItemChange"));
+				}
+			}
+
+			public function get selectedItem():IFruit {
+				return _selectedItem;
+			}
+			
+			/*
+			-------------------------------------------------------------------
+			Event Handlers
+			-------------------------------------------------------------------
+			*/
+			
+			private function handleItemClick(event:ListEvent):void {
+				this.selectedItem = IFruit(event.itemRenderer.data);
+			}
+			
+		]]>
+	</mx:Script>
+
+	<!-- REVERSE DATA BINDING -->
+
+	<mx:Binding destination="selectedItem.id" source="wFruitID.text" />
+	<mx:Binding destination="selectedItem.name" source="wFruitName.text" />
+	
+	<!-- MASTER LIST -->
+
+	<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:ui="com.adeptiv.ui.*" width="350" height="100%">
+		<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" paddingTop="5" paddingLeft="5" paddingRight="5" paddingBottom="5" verticalGap="5" xmlns:modifierBar="com.adeptiv.components.modifierBar.*">
+			<mx:Canvas width="100%" height="100%">
+				<mx:DataGrid id="wGrid" width="100%" height="100%" itemClick="handleItemClick(event)">
+					<mx:columns>
+						<mx:DataGridColumn headerText="ID" dataField="id"/>
+						<mx:DataGridColumn headerText="Fruit Name" dataField="name"/>
+					</mx:columns>
+				</mx:DataGrid>
+				<mx:Canvas width="100%" height="100%" id="wWaiter" backgroundAlpha="0.5" backgroundColor="#EEEEEE" visible="{waiting}">
+					<mx:Text text="Please wait..." horizontalCenter="0" verticalCenter="0" />
+				</mx:Canvas>
+			</mx:Canvas>
+			<mx:HBox>
+				<mx:Button label="+" click="dispatchEvent(new Event('create'))" />
+				<mx:Button label="-" click="dispatchEvent(new Event('delete'))" />
+			</mx:HBox>
+		</mx:VBox>
+	</mx:Canvas>
+
+	<!-- DETAIL -->
+
+	<mx:VBox paddingTop="10">
+		<mx:Text text="Fruit Detail" fontSize="18" color="#999999" fontWeight="bold"/>
+		<mx:TextInput id="wFruitID" text="{selectedItem.id}" enabled="false" width="100"/>
+		<mx:TextInput id="wFruitName" text="{selectedItem.name}" width="200"/>
+		<mx:Button id="wSave" click="dispatchEvent(new Event('save'))" label="{selectedItem &amp;&amp; selectedItem.id != null ? 'Save' : 'Create'}" />
+	</mx:VBox>
+
+</mx:HDividedBox>
