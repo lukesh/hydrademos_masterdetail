@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mx:HDividedBox xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" xmlns:fruitMasterList="com.adeptiv.learning.fruit.view.components.fruitMasterList.*"
-	xmlns:fruitDetail="com.adeptiv.learning.fruit.view.components.fruitDetail.*" preinitialize="HydraFramework.initialize(this, FruitFacade)"
+<mx:HDividedBox xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" 
+	preinitialize="HydraFramework.initialize(this, FruitFacade)"
 	>
 	<mx:Script>
 		<![CDATA[
@@ -64,7 +64,7 @@
 	<!-- MASTER LIST -->
 
 	<mx:Canvas width="350" height="100%">
-		<mx:VBox width="100%" height="100%" paddingTop="5" paddingLeft="5" paddingRight="5" paddingBottom="5" verticalGap="5">
+		<mx:VBox width="100%" height="100%" styleName="masterList">
 			<mx:Canvas width="100%" height="100%">
 				<mx:DataGrid id="wGrid" width="100%" height="100%" itemClick="handleItemClick(event)">
 					<mx:columns>
@@ -85,8 +85,8 @@
 
 	<!-- DETAIL -->
 
-	<mx:VBox paddingTop="10">
-		<mx:Text text="Fruit Detail" fontSize="18" color="#999999" fontWeight="bold"/>
+	<mx:VBox styleName="detil">
+		<mx:Text text="Fruit Detail" styleName="detailTitle" />
 		<mx:TextInput id="wFruitID" text="{selectedItem.id}" enabled="false" width="100"/>
 		<mx:TextInput id="wFruitName" text="{selectedItem.name}" width="200"/>
 		<mx:Button id="wSave" click="dispatchEvent(new Event('save'))" label="{selectedItem &amp;&amp; selectedItem.id != null ? 'Save' : 'Create'}" />
