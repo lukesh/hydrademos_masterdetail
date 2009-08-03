@@ -5,7 +5,7 @@
 	<mx:Script>
 		<![CDATA[
 			import mx.events.ListEvent;
-			import view.components.fruit.data.interfaces.IFruit;
+			import com.demo.view.components.fruit.data.interfaces.IFruit;
 			import com.hydraframework.core.HydraFramework;
 			import mx.collections.ArrayCollection;
 
@@ -58,7 +58,6 @@
 
 	<!-- REVERSE DATA BINDING -->
 
-	<mx:Binding destination="selectedItem.id" source="wFruitID.text" />
 	<mx:Binding destination="selectedItem.name" source="wFruitName.text" />
 	
 	<!-- MASTER LIST -->

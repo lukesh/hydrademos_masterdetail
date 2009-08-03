@@ -2,7 +2,7 @@
    HydraFramework - Copyright (c) 2009 andCulture, Inc. Some rights reserved.
    Your reuse is governed by the Creative Commons Attribution 3.0 United States License
  */
-package view.components.fruit.controller {
+package com.demo.view.components.fruit.controller {
 	import com.hydraframework.plugins.masterDetail.MasterDetailPlugin;
 	import com.hydraframework.core.mvc.events.Notification;
 	import com.hydraframework.core.mvc.interfaces.IFacade;

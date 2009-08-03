@@ -2,7 +2,7 @@
    HydraFramework - Copyright (c) 2009 andCulture, Inc. Some rights reserved.
    Your reuse is governed by the Creative Commons Attribution 3.0 United States License
  */
-package view.components.fruit.view {
+package com.demo.view.components.fruit.view {
 	import com.hydraframework.core.mvc.events.Notification;
 	import com.hydraframework.core.mvc.patterns.mediator.Mediator;
 	import com.hydraframework.plugins.masterDetail.MasterDetailPlugin;
@@ -12,8 +12,8 @@ package view.components.fruit.view {
 	import mx.collections.ArrayCollection;
 	import mx.core.IUIComponent;
 	
-	import view.components.fruit.Fruit;
-	import view.components.fruit.data.interfaces.IFruit;
+	import com.demo.view.components.fruit.Fruit;
+	import com.demo.view.components.fruit.data.interfaces.IFruit;
 
 	public class FruitMediator extends Mediator {
 		public static const NAME:String = "FruitMediator";

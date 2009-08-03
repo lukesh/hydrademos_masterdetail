@@ -2,8 +2,8 @@
    HydraFramework - Copyright (c) 2009 andCulture, Inc. Some rights reserved.
    Your reuse is governed by the Creative Commons Attribution 3.0 United States License
  */
-package view.components.fruit.data.descriptors {
-	import view.components.fruit.data.interfaces.IFruit;
+package com.demo.view.components.fruit.data.descriptors {
+	import com.demo.view.components.fruit.data.interfaces.IFruit;
 	
 	import flash.events.Event;
 	import flash.events.EventDispatcher;

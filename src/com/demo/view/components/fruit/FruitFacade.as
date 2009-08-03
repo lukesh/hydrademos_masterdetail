@@ -2,17 +2,17 @@
    HydraFramework - Copyright (c) 2009 andCulture, Inc. Some rights reserved.
    Your reuse is governed by the Creative Commons Attribution 3.0 United States License
  */
-package view.components.fruit
+package com.demo.view.components.fruit
 {
 	import com.hydraframework.core.mvc.patterns.facade.Facade;
 	import com.hydraframework.plugins.masterDetail.MasterDetailPlugin;
 	
 	import mx.core.IUIComponent;
 	
-	import view.components.fruit.controller.StartupCommand;
-	import view.components.fruit.data.delegates.FruitDelegate;
-	import view.components.fruit.data.interfaces.IFruitDelegate;
-	import view.components.fruit.view.FruitMediator;
+	import com.demo.view.components.fruit.controller.StartupCommand;
+	import com.demo.view.components.fruit.data.delegates.MockFruitDelegate;
+	import com.demo.view.components.fruit.data.interfaces.IFruitDelegate;
+	import com.demo.view.components.fruit.view.FruitMediator;
 
 	public class FruitFacade extends Facade
 	{
@@ -31,7 +31,7 @@ package view.components.fruit
 			/*
 			   Plugins
 			 */
-			this.registerPlugin(new MasterDetailPlugin(IFruitDelegate, FruitDelegate));
+			this.registerPlugin(new MasterDetailPlugin(IFruitDelegate, MockFruitDelegate));
 			
 			/*
 			   Delegates

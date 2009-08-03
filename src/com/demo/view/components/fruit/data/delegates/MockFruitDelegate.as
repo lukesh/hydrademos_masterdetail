@@ -2,21 +2,21 @@
    HydraFramework - Copyright (c) 2009 andCulture, Inc. Some rights reserved.
    Your reuse is governed by the Creative Commons Attribution 3.0 United States License
  */
-package view.components.fruit.data.delegates {
-	import view.components.fruit.data.descriptors.FruitDescriptor;
-	import view.components.fruit.data.interfaces.IFruit;
-	import view.components.fruit.data.interfaces.IFruitDelegate;
+package com.demo.view.components.fruit.data.delegates {
+	import com.demo.view.components.fruit.data.descriptors.FruitDescriptor;
+	import com.demo.view.components.fruit.data.interfaces.IFruit;
+	import com.demo.view.components.fruit.data.interfaces.IFruitDelegate;
 	import com.hydraframework.plugins.masterDetail.data.delegates.MockMasterDelegate;
 	
 	import mx.collections.ArrayCollection;
 
-	public class FruitDelegate extends MockMasterDelegate implements IFruitDelegate {
+	public class MockFruitDelegate extends MockMasterDelegate implements IFruitDelegate {
 
 		private static var mock_list:ArrayCollection;
 		private static var next_fruit_id:int = 0;
 		private static var next_fruit_name:Array = ["Banana", "Apple", "Kumquat", "Orange", "Avocado", "Tomato", "Plum"];
 		
-		public function FruitDelegate() {
+		public function MockFruitDelegate() {
 			super();
 		}
 
