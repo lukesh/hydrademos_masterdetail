@@ -39,7 +39,7 @@ package com.demo.data.delegates {
 		/**
 		 * Returns a mock recordset
 		 */
-		override public function get collection():ArrayCollection {
+		override public function get mockCollection():ArrayCollection {
 			if (!mock_list) {
 				mock_list = new ArrayCollection();
 				for (var i:int = 0; i < 6; i++) {

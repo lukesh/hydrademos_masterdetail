@@ -22,17 +22,9 @@ package com.demo.view.components.fruit.data.delegates {
 
 		/*
 		   -----------------------------------------------------------------------
-		   Public API
+		   Overriding testing methods from MockMasterDelegate
 		   -----------------------------------------------------------------------
 		 */
-
-		override public function get keyField():String {
-			return "id";
-		}
-
-		override public function get recordFactory():Function {
-			return newFruit;
-		}
 
 		override public function get mockRecordFactory():Function {
 			return newMockFruit;
@@ -42,7 +34,7 @@ package com.demo.view.components.fruit.data.delegates {
 			return newMockID;
 		}
 		
-		override public function get collection():ArrayCollection {
+		override public function get mockCollection():ArrayCollection {
 			if (!mock_list) {
 				mock_list = new ArrayCollection();
 				mock_list.addItem(mockRecordFactory());
@@ -53,17 +45,31 @@ package com.demo.view.components.fruit.data.delegates {
 			}
 			return mock_list;
 		}
+
+		/*
+		   -----------------------------------------------------------------------
+		   Public IMasterDelegate API
+		   -----------------------------------------------------------------------
+		 */
+		 
+		override public function get keyField():String {
+			return "id";
+		}
 		
+		override public function get recordFactory():Function {
+			return newFruit;
+		}
+
+		override public function retrieveList():void {
+			super.retrieveList();
+		}
+				
 		override public function createObject(object:Object):void {
 			super.createObject(object);
 		}
 		
 		override public function deleteObject(object:Object):void {
 			super.deleteObject(object);
-		}
-		
-		override public function retrieveList():void {
-			super.retrieveList();
 		}
 		
 		override public function retrieveObject(key:Object):void {
