@@ -19,7 +19,7 @@ package com.demo {
 		override public function registerCore():void {
 			// Override any Fruit delegates in the system with ImplFruitDelegate
 			// in the application (global) context.
-			this.registerDelegate(ImplFruitDelegate, true); 
+			// this.registerDelegate(ImplFruitDelegate, true); 
 		}
 
 	}
