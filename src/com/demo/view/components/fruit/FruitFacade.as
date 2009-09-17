@@ -10,7 +10,7 @@ package com.demo.view.components.fruit
 	import mx.core.IUIComponent;
 	
 	import com.demo.view.components.fruit.controller.StartupCommand;
-	import com.demo.view.components.fruit.data.delegates.MockFruitDelegate;
+	import com.demo.view.components.fruit.data.delegates.FruitDelegateMock;
 	import com.demo.view.components.fruit.data.interfaces.IFruitDelegate;
 	import com.demo.view.components.fruit.view.FruitMediator;
 
@@ -31,7 +31,7 @@ package com.demo.view.components.fruit
 			/*
 			   Plugins
 			 */
-			this.registerPlugin(new MasterDetailPlugin(IFruitDelegate, MockFruitDelegate));
+			this.registerPlugin(new MasterDetailPlugin(IFruitDelegate, FruitDelegateMock));
 			
 			/*
 			   Delegates

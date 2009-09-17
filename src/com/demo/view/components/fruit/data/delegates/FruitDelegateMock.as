@@ -6,23 +6,23 @@ package com.demo.view.components.fruit.data.delegates {
 	import com.demo.view.components.fruit.data.descriptors.FruitDescriptor;
 	import com.demo.view.components.fruit.data.interfaces.IFruit;
 	import com.demo.view.components.fruit.data.interfaces.IFruitDelegate;
-	import com.hydraframework.plugins.masterDetail.data.delegates.MockMasterDelegate;
+	import com.hydraframework.plugins.masterDetail.data.delegates.MasterDelegateMock;
 	
 	import mx.collections.ArrayCollection;
 
-	public class MockFruitDelegate extends MockMasterDelegate implements IFruitDelegate {
+	public class FruitDelegateMock extends MasterDelegateMock implements IFruitDelegate {
 
 		private static var mock_list:ArrayCollection;
 		private static var next_fruit_id:int = 0;
 		private static var next_fruit_name:Array = ["Banana", "Apple", "Kumquat", "Orange", "Avocado", "Tomato", "Plum"];
 		
-		public function MockFruitDelegate() {
+		public function FruitDelegateMock() {
 			super();
 		}
 
 		/*
 		   -----------------------------------------------------------------------
-		   Overriding testing methods from MockMasterDelegate
+		   Overriding testing methods from MasterDelegateMock
 		   -----------------------------------------------------------------------
 		 */
 
